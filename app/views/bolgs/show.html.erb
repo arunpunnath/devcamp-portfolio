@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @bolg.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @bolg.body %>
+</p>
+
+<%= link_to 'Edit', edit_bolg_path(@bolg) %> |
+<%= link_to 'Back', bolgs_path %>

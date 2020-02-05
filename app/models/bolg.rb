@@ -1,0 +1,2 @@
+class Bolg < ApplicationRecord
+end
