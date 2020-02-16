@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :portfolios
+  resources :portfolios, expect: [:show]
+  get 'portfolios/:id', to: 'portfolio#show', as: 'portfolio_show'
   
 
   get 'about' , to: 'pages#about'

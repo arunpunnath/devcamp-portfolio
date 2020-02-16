@@ -24,6 +24,10 @@ class PortfoliosController < ApplicationController
   		@portfolio_item = Portfolio.find(params[:id])
   	end
 
+  	def show
+  		@portfolio_item = Portfolio.find(params[:id])
+  	end
+
   	def update
 	    respond_to do |format|
 	      if @blog.update(params.require(:portfolio).permit(:title ,:subtitle , :body))
@@ -33,5 +37,13 @@ class PortfoliosController < ApplicationController
 	      end
 	    end
   	end
+
+  	def destroy
+	  	@portfolio_item = Portfolio.find(params[:id])
+	    @portfolio_item.destroy
+	    respond_to do |format|
+	      format.html { redirect_to portfolios_path, notice: 'Portfolio was successfully destroyed.' }
+    end
+  end
 
 end
